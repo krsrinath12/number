@@ -1,0 +1,88 @@
+\documentclass[12pt, a4paper]{article}
+\pagestyle {plain}
+
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}	% the hidelinks option is not supported on this computer, try using a diff. computer.
+\usepackage{titlesec}
+
+\titlelabel{\thetitle.\quad}
+
+\listfiles	% lists the versions of the packages in the installation
+
+\newcommand{\newl}{\newline}
+
+\title{Number Theory}
+\author{K R Srinath}
+\date{}		% suppress the date
+
+\begin{document}
+
+\maketitle	% create the title page
+
+\newpage
+\tableofcontents	% generate the TOC
+
+\newpage
+% --- About this document ---
+\section*{About this document}	% create unnumbered section
+\addcontentsline{toc}{section}{About this document}	% Unnumbered sections are not added to TOC. This line adds them.
+This article is a collection of different topics and concepts in Number Theory. The reason for writing the article is twofold:
+
+\begin{enumerate}
+\item When I write/type what I know, it helps me remember it longer and lets me know if I've understood it properly.
+\item I wanted to learn \LaTeX.
+\end{enumerate}
+
+All the content in this article has been taken from \emph{The Higher Arithmetic} (Eighth edition, 2008) by H. Davenport . The arrangement of topics is more or less what it is in my book (I've taken down what I like, and what I feel is important, in my book).
+
+Since this is a single article and not a book, topics will not appear as separate chapters. Important topics will appear as sections and important points will appear as subsections. General text for explanation will appear as ordinary text in the (sub)section.
+
+Concepts like divisibility, factorization and primes are not explained. Most theorems will be written in an informal fashion in this article.
+
+
+% --- Conventions ---
+\section*{Conventions}
+\addcontentsline{toc}{section}{Conventions}
+The word `number' appearing in the document refers to a natural number (from the set \textrm{N} = \{1,2,\ldots,$\infty$\}).
+
+
+\newpage
+% --- The Fundamental Theorem of Arithmetic ---
+\section{The Fundamental Theorem of Arithmetic} \label{funda-th}
+Any number can be represented in one and only way as the product of primes.\newl
+
+Restated, there exists only one factorization into primes for a given number.
+Thus, any number \textit{n} can be written as
+\begin{equation} n = p^{a}q^{b}r^{c} \ldots \label{basic-n} \end{equation}
+where \textit{p}, \textit{q}, \textit{r} are primes and \textit{a}, \textit{b}, \textit{c} are their exponents. According to the fundamental theorem, \textit{p}, \textit{q}, \textit{r} and \textit{a}, \textit{b}, \textit{c} are all unique.
+
+
+\subsection*{Why 1 is neither prime not composite}
+\addcontentsline{toc}{subsection}{Why 1 is neither prime nor composite}
+1 cannot be composite, since there are no numbers \textit{p}, \textit{q}, \textit{r}, less than 1 which can make up 1.
+Now, suppose 1 was considered in the primes. \ref{basic-n} could now be rewritten as
+\[ n = p^{a}q^{b}r^{c} \ldots (1)^{\alpha} \]
+It is obvious that \(\alpha\) can take on the value of any number. Thus, there are arbitrarily many (infinite) \textit{trivial} factorizations for a given number, in contradiction to the \hyperref[funda-th]{fundamental theorem}. As a result, it is better to consider 1 as an exception to the ordinary prime/composite classification and avoid encumbering the definition.
+
+
+\subsection*{Proof of the uniqueness of factorization}
+\addcontentsline{toc}{subsection}{Proof of the uniqueness of factorization}
+Consider a number \textit{n}. If \textit{n} is prime, there is nothing to prove. So let n be composite. \newl
+
+Suppose,
+\begin{equation} n = pqr \ldots = p'q'r' \ldots \label{two-n} \end{equation}
+Further, suppose none of the primes in the two representations are equal.
+
+Let \textit{p} be the least of the primes \textit{p}, \textit{q}, \textit{r} and \textit{p'} the least of \textit{p'}, \textit{q'}, \textit{r'}. We have \[ n \ge p^2 \] Similarly, \[ n \ge p'^2 \] Since \[ \textit{p} \neq \textit{p'} \] one of the given relations is a strict inequality. Thus, \[ n > pp' \]
+
+Now, \[ n - pp' \] is divisible by \textit{p} and also by \textit{p'}. Thus,
+\[ n - pp' = pp'QR \ldots \]
+\textit{pp'} is now a factor of \textit{n} and \textit{p'} is a factor of \textit{q}, \textit{r}, \ldots in \ref{two-n}. However, \textit{p'} is not one of \textit{q}, \textit{r}, \ldots.
+
+Thus, we have a contradiction, implying that \textit{n} can have only one factorization into primes.
+
+
+% --- Euclid's algorithm for GCD ---
+\section{Euclid's algorithm for GCD} \label{euclid}
+
+\end{document}
