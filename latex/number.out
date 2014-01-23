@@ -1,6 +1,11 @@
-\BOOKMARK [1][-]{section*.1}{About this document}{}
-\BOOKMARK [1][-]{Item.2}{Conventions}{}
+\BOOKMARK [1][-]{section*.2}{About this document}{}
+\BOOKMARK [1][-]{section*.3}{Conventions}{}
 \BOOKMARK [1][-]{section.1}{The Fundamental Theorem of Arithmetic}{}
-\BOOKMARK [2][-]{equation.1.1}{Why 1 is neither prime nor composite}{section.1}
-\BOOKMARK [2][-]{equation.1.1}{Proof of the uniqueness of factorization}{section.1}
+\BOOKMARK [2][-]{section*.4}{Proof of the uniqueness of factorization}{section.1}
+\BOOKMARK [2][-]{section*.5}{Why 1 is neither prime nor composite}{section.1}
 \BOOKMARK [1][-]{section.2}{Euclid's algorithm for GCD}{}
+\BOOKMARK [1][-]{section.3}{Euclid's Theorem}{}
+\BOOKMARK [2][-]{section*.6}{Another proof of the uniqueness of factorization}{section.3}
+\BOOKMARK [1][-]{section.4}{The Linear Diophantine Equation}{}
+\BOOKMARK [1][-]{section.5}{The congruence notation}{}
+\BOOKMARK [2][-]{section*.7}{Complete set of residues}{section.5}

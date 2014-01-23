@@ -3,9 +3,6 @@
 
 \usepackage{amsmath, amssymb}
 \usepackage{hyperref}	% the hidelinks option is not supported on this computer, try using a diff. computer.
-\usepackage{titlesec}
-
-\titlelabel{\thetitle.\quad}
 
 \listfiles	% lists the versions of the packages in the installation
 
@@ -57,14 +54,6 @@ Thus, any number \textit{n} can be written as
 where \textit{p}, \textit{q}, \textit{r} are primes and \textit{a}, \textit{b}, \textit{c} are their exponents. According to the fundamental theorem, \textit{p}, \textit{q}, \textit{r} and \textit{a}, \textit{b}, \textit{c} are all unique.
 
 
-\subsection*{Why 1 is neither prime not composite}
-\addcontentsline{toc}{subsection}{Why 1 is neither prime nor composite}
-1 cannot be composite, since there are no numbers \textit{p}, \textit{q}, \textit{r}, less than 1 which can make up 1.
-Now, suppose 1 was considered in the primes. \ref{basic-n} could now be rewritten as
-\[ n = p^{a}q^{b}r^{c} \ldots (1)^{\alpha} \]
-It is obvious that \(\alpha\) can take on the value of any number. Thus, there are arbitrarily many (infinite) \textit{trivial} factorizations for a given number, in contradiction to the \hyperref[funda-th]{fundamental theorem}. As a result, it is better to consider 1 as an exception to the ordinary prime/composite classification and avoid encumbering the definition.
-
-
 \subsection*{Proof of the uniqueness of factorization}
 \addcontentsline{toc}{subsection}{Proof of the uniqueness of factorization}
 Consider a number \textit{n}. If \textit{n} is prime, there is nothing to prove. So let n be composite. \newl
@@ -82,7 +71,64 @@ Now, \[ n - pp' \] is divisible by \textit{p} and also by \textit{p'}. Thus,
 Thus, we have a contradiction, implying that \textit{n} can have only one factorization into primes.
 
 
+\subsection*{Why 1 is neither prime not composite}
+\addcontentsline{toc}{subsection}{Why 1 is neither prime nor composite}
+1 cannot be composite, since there are no numbers \textit{p}, \textit{q}, \textit{r}, less than 1 which can make up 1.
+Now, suppose 1 was considered in the primes. \ref{basic-n} could now be rewritten as
+\[ n = p^{a}q^{b}r^{c} \ldots (1)^{\alpha} \]
+It is obvious that \(\alpha\) can take on the value of any number. Thus, there are arbitrarily many (infinite) \textit{trivial} factorizations for a given number, in contradiction to the \hyperref[funda-th]{fundamental theorem}. As a result, it is better to consider 1 as an exception to the ordinary prime/composite classification and avoid encumbering the definition.
+
+
 % --- Euclid's algorithm for GCD ---
-\section{Euclid's algorithm for GCD} \label{euclid}
+\section{Euclid's algorithm for GCD} \label{euclid-algo}
+Suppose we need to find the GCD of two numbers, \textit{a} and \textit{b}, with \textit{a} > \textit{b}. Then, write out \textit{a} as
+\[ a = qb + c \]
+with $ 0 < \textit{c} < \textit{b} $. The GCD of \textit{a} and \textit{b} also divides \textit{c} = \textit{a - qb}.\newl
+Thus, we have
+\[ b = q_{1}c + d \]
+The problem of finding the GCD of \textit{a} and \textit{b} has now reduced to the problem of finding the GCD of \textit{b} and \textit{c}, with both of them less than \textit{a}. Hence, the process of writing out such equations must eventually terminate.
+
+Finally, we may have
+\[ w = q_{n}y \]
+$ q_{n} $ is the GCD of \textit{a} and \textit{b}.
+
+%\textbf{\underline{Note:}} \; The GCD of \textit{na} and \textit{nb} is \textit{np}
+
+
+% --- Euclid's Theorem ---
+\section{Euclid's Theorem} \label{euclid-th}
+If a prime divides the product of two numbers, it must divide atleast one of the numbers.
+
+\subsection*{Another proof of the uniqueness of factorization}
+\addcontentsline{toc}{subsection}{Another proof of the uniqueness of factorization}
+Let
+\[ n = pqr \ldots = p'q'r' \ldots \]
+Now, since p divides \textit{p'}(\textit{q'r'}\ldots), it must divide either \textit{p'} or \textit{q'r'}\ldots. If it divides \textit{p'}, \textit{p} = \textit{p'}, since \textit{p'} is prime. We can now cancel \textit{p} and \textit{p'} from both sides and repeat this argument.
+
+Eventually, all primes on the left turn out to be the same as those on the right.
+
+% --- The Linear Diophantine Equation ---
+\section {The Linear Diophantine Equation} \label{dio-eq}
+An equation of the form
+\[ ax - by = m \]
+that can only be solved if and only if GCD(\textit{a},\textit{b}) = 1. \newl
+
+As a special case, the equation can also be solved for
+\[ ax_0 - by_0 = GCD(\textit{a},\textit{b}) \]
+with $x_0$ and $y_0$ being the quantities to be determined.
+
+
+% --- The congruence notation ---
+\section {The congruence notation}
+Introduced by Gauss, it helps express, in a convenient form, that two numbers \textit{a} and \textit{b} differ by an integral multiple of a fixed number \textit{m}. It is said that \textit{a} is congruent to \textit{b} with respect to the \emph{modulus} \textit{m}. In symbols,
+\[ a \equiv b \pmod {m} \]
+
+In other words, \textit{a} - \textit{b} is divisible by \textit{m}.
+
+\subsection*{Complete set of residues}
+\addcontentsline{toc}{subsection}{Complete set of residues}
+Any set of \textit{m} numbers is a complete set of residues $\pmod{m}$ if no two numbers in the set are congruent (to each other).
+
+
 
 \end{document}
